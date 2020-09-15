@@ -15,13 +15,13 @@ export default function About() {
         </Typography>
         <br />
         <Typography variant="overline">
-          API de vinos{" "}
+          API de Cervezas{" "}
           <a
-            href="https://www.globalwinescore.com/"
+            href="https://www.punkapi.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            globalwinescore
+            PUNK API
           </a>
         </Typography>
       </div>
