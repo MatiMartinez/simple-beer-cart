@@ -70,11 +70,14 @@ export function getVinosAction() {
   return async (dispatch) => {
     dispatch(getVinos());
     try {
-      const res = await Axios.get("/globalwinescores/latest/?limit=20", {
-        headers: {
-          Authorization: `Token ${process.env.REACT_APP_API_KEY}`,
-        },
-      });
+      const res = await Axios.get(
+        "https://api.globalwinescore.com/globalwinescores/latest/?limit=20",
+        {
+          headers: {
+            Authorization: `Token ${process.env.REACT_APP_API_KEY}`,
+          },
+        }
+      );
       console.log(res);
       dispatch(getVinosExito(res.data.results));
     } catch (error) {
