@@ -1,78 +1,82 @@
 import {
-  AGREGAR_VINO,
-  AGREGAR_VINO_EXITO,
-  AGREGAR_VINO_ERROR,
-  GET_VINOS,
-  GET_VINOS_EXITO,
-  GET_VINOS_ERROR,
-  QUITAR_VINO,
-  QUITAR_VINO_EXITO,
-  QUITAR_VINO_ERROR,
+  AGREGAR_CERVEZA,
+  AGREGAR_CERVEZA_EXITO,
+  AGREGAR_CERVEZA_ERROR,
+  GET_CERVEZAS,
+  GET_CERVEZAS_EXITO,
+  GET_CERVEZAS_ERROR,
+  QUITAR_CERVEZA,
+  QUITAR_CERVEZA_EXITO,
+  QUITAR_CERVEZA_ERROR,
 } from "../types/index";
 
 // Cada reducer tiene su propio state
 const initialState = {
-  vinos: [],
-  vinosEnCarro: [],
+  cervezas: [],
+  cervezasEnCarro: [],
   error: null,
   loading: false,
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case AGREGAR_VINO:
+    case AGREGAR_CERVEZA:
       return {
         ...state,
         loading: action.payload,
       };
-    case AGREGAR_VINO_EXITO:
+    case AGREGAR_CERVEZA_EXITO:
       return {
         ...state,
         loading: false,
         error: null,
-        vinosEnCarro: [...state.vinosEnCarro, action.payload],
+        cervezasEnCarro: [...state.cervezasEnCarro, action.payload],
       };
-    case AGREGAR_VINO_ERROR:
+    case AGREGAR_CERVEZA_ERROR:
       return {
         ...state,
         loading: false,
         error: action.payload,
       };
-    case GET_VINOS:
+    case GET_CERVEZAS:
       return {
         ...state,
         loading: action.payload,
       };
-    case GET_VINOS_EXITO:
+    case GET_CERVEZAS_EXITO:
       return {
         ...state,
         loading: false,
         error: null,
-        vinos: action.payload,
+        cervezas: action.payload,
       };
-    case GET_VINOS_ERROR:
+    case GET_CERVEZAS_ERROR:
       return {
         ...state,
         loading: false,
         error: action.payload,
       };
-    case QUITAR_VINO:
+    case QUITAR_CERVEZA:
       return {
         ...state,
         loading: action.payload,
       };
-    case QUITAR_VINO_EXITO:
+    case QUITAR_CERVEZA_EXITO:
       return {
         ...state,
         loading: false,
         error: null,
-        vinosEnCarro: [
-          ...state.vinosEnCarro.slice(0, action.payload),
-          ...state.vinosEnCarro.slice(action.payload + 1),
+        cervezasEnCarro: [
+          ...state.cervezasEnCarro.slice(0, action.payload),
+          ...state.cervezasEnCarro.slice(action.payload + 1),
         ],
       };
-    case QUITAR_VINO_ERROR:
-      return {};
+    case QUITAR_CERVEZA_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
     default:
       return state;
   }

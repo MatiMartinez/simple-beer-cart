@@ -3,28 +3,33 @@ import React from "react";
 // MUI
 import { Card, CardContent, Typography, CardActions } from "@material-ui/core";
 
-export default function VinoCard(props) {
-  const { vino } = props;
+export default function CervezaCard(props) {
+  const { cerveza } = props;
   return (
-    <Card className="vino-card" variant="outlined">
-      <CardContent className="vino-card-content">
+    <Card className="cerveza-card" variant="outlined">
+      <div className="img-container">
+        <img src={cerveza.image_url} alt="beer-img" className="cerveza-img" />
+      </div>
+      <CardContent className="cerveza-card-content">
         <Typography variant="h6" gutterBottom>
-          {vino.wine}
+          {cerveza.name}
         </Typography>
         <br />
         <Typography variant="overline" color="textSecondary">
-          {vino.appellation}
+          {cerveza.tagline}
         </Typography>
         <br />
         <Typography variant="caption" color="textSecondary">
-          {vino.country}
+          IBU {cerveza.ibu}
         </Typography>
         <br />
         <Typography variant="caption" color="textSecondary">
-          {vino.vintage} - {vino.score}
+          ABV {cerveza.abv}
         </Typography>
       </CardContent>
-      <CardActions className="vino-card-actions">{props.children}</CardActions>
+      <CardActions className="cerveza-card-actions">
+        {props.children}
+      </CardActions>
     </Card>
   );
 }

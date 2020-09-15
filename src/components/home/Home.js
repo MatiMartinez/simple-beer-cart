@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Container, Grid, Button, Box } from "@material-ui/core";
-import VinoCard from "./VinoCard";
+import CervezaCard from "./CervezaCard";
 
 // Redux
 import {
-  agregarVinoAction,
-  getVinosAction,
-} from "../../redux/actions/vinosActions";
+  agregarCervezaAction,
+  getCervezasAction,
+} from "../../redux/actions/cervezaActions";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../loading/Loading";
 
@@ -14,46 +14,46 @@ export default function Home() {
   // Redux
   const dispatch = useDispatch();
 
-  function agregarVino(vino) {
-    dispatch(agregarVinoAction(vino));
+  function agregarCerveza(cerveza) {
+    dispatch(agregarCervezaAction(cerveza));
   }
 
-  function onClickAgregar(vino) {
-    agregarVino(vino);
+  function onClickAgregar(cerveza) {
+    agregarCerveza(cerveza);
   }
 
   useEffect(() => {
-    function getVinos() {
-      dispatch(getVinosAction());
+    function getCervezas() {
+      dispatch(getCervezasAction());
     }
-    getVinos();
+    getCervezas();
   }, []); //eslint-disable-line
 
-  const vinos = useSelector((state) => state.vinos.vinos);
+  const cervezas = useSelector((state) => state.cervezas.cervezas);
 
-  const cargando = useSelector((state) => state.vinos.loading);
+  const cargando = useSelector((state) => state.cervezas.loading);
 
   return (
     <Container className="container">
       <Box className="box-title">
-        <h2>NUESTROS VINOS</h2>
-        <h4>Lista de vinos</h4>
+        <h2>NUESTROS CERVEZAS</h2>
+        <h4>Beers</h4>
       </Box>
       <Grid container spacing={4}>
         {cargando === true ? (
           <Loading />
         ) : (
-          vinos.length !== 0 &&
-          vinos.map((vino, index) => (
+          cervezas.length !== 0 &&
+          cervezas.map((cerveza, index) => (
             <Grid item xs={3} key={index}>
-              <VinoCard vino={vino}>
+              <CervezaCard cerveza={cerveza}>
                 <Button
                   className="btn-add"
-                  onClick={() => onClickAgregar(vino)}
+                  onClick={() => onClickAgregar(cerveza)}
                 >
                   Agregar
                 </Button>
-              </VinoCard>
+              </CervezaCard>
             </Grid>
           ))
         )}

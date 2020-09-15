@@ -9,7 +9,7 @@
   vertical-align: inherit;
 }
 
-/* Grid de vinos */
+/* Grid de cervezas */
 .container {
   margin-top: 40px;
 }
@@ -24,22 +24,35 @@
   font-weight: normal;
 }
 
-/* Vino Card */
-.vino-card {
-  min-height: 275px;
+/* Cerveza Card */
+.cerveza-card {
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 0%;
   border: 2px solid #bbb;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.vino-card-content {
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cerveza-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100px;
+}
+
+.cerveza-card-content {
   height: 100%;
   text-align: center;
 }
 
-.vino-card-actions {
+.cerveza-card-actions {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -69,6 +82,7 @@
 .item-on-cart {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .item-on-cart h1 {

@@ -5,15 +5,17 @@ import ItemEnCarrito from "./ItemEnCarrito";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
-import { quitarVinoAction } from "../../redux/actions/vinosActions";
+import { quitarCervezaAction } from "../../redux/actions/cervezaActions";
 
 export default function Carrito() {
   const dispatch = useDispatch();
 
-  const vinosEnCarrito = useSelector((state) => state.vinos.vinosEnCarro);
+  const cervezasEnCarro = useSelector(
+    (state) => state.cervezas.cervezasEnCarro
+  );
 
-  function quitarVino(index) {
-    dispatch(quitarVinoAction(index));
+  function quitarCerveza(index) {
+    dispatch(quitarCervezaAction(index));
   }
 
   return (
@@ -23,15 +25,15 @@ export default function Carrito() {
       </Box>
       <Container className="body-carrito">
         <Grid container spacing={3}>
-          {vinosEnCarrito.length === 0 ? (
+          {cervezasEnCarro.length === 0 ? (
             <div className="vacio-container">Tu carro esta vacío</div>
           ) : (
-            vinosEnCarrito.map((vino, index) => (
+            cervezasEnCarro.map((cerveza, index) => (
               <Grid item xs={12} key={index}>
-                <ItemEnCarrito vino={vino}>
+                <ItemEnCarrito cerveza={cerveza}>
                   <IconButton
                     className="btn-delete"
-                    onClick={() => quitarVino(index)}
+                    onClick={() => quitarCerveza(index)}
                   >
                     <DeleteForeverSharpIcon />
                   </IconButton>

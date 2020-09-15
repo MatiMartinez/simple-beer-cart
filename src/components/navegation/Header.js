@@ -19,7 +19,7 @@ import { useSelector } from "react-redux";
 
 export default function Header() {
   const cantidadEnCarro = useSelector(
-    (state) => state.vinos.vinosEnCarro.length
+    (state) => state.cervezas.cervezasEnCarro.length
   );
 
   return (
