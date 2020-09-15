@@ -1,38 +1,93 @@
-.App {
+.link-unstyled,
+.link-unstyled:visited,
+.link-unstyled:hover,
+.link-unstyled:active,
+.link-unstyled:focus {
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+  vertical-align: inherit;
+}
+
+/* Grid de vinos */
+.container {
+  margin-top: 40px;
+}
+
+.box-title h2 {
+  margin-bottom: 0px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.box-title h4 {
+  margin-top: 40px;
+  font-weight: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Vino Card */
+.vino-card {
+  min-height: 275px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  border-radius: 0%;
+  border: 2px solid #bbb;
+}
+
+.vino-card-content {
+  height: 100%;
+  text-align: center;
+}
+
+.vino-card-actions {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-add {
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 0%;
+  border: 1px solid #ae0001;
+  background: transparent;
+  color: #ae0001;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-add:hover {
+  background: #740001;
+  color: #ffffff;
+}
+
+/* Carrito */
+.vacio-container {
+  color: #bbb;
+  text-align: center;
+  width: 100%;
+}
+
+.item-on-cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-on-cart h1 {
+  font-weight: lighter;
+}
+
+.mb {
+  margin-bottom: 40px;
+}
+
+.btn-delete {
+  background: #d9534f;
+  border-radius: 0px;
+}
+
+.btn-delete:hover {
+  background: #d33b36;
+}
+
+.body-carrito {
+  width: 50%;
 }
