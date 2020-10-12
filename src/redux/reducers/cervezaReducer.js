@@ -10,7 +10,6 @@ import {
   QUITAR_CERVEZA_ERROR,
 } from "../types/index";
 
-// Cada reducer tiene su propio state
 const initialState = {
   cervezas: [],
   cervezasEnCarro: [],
@@ -26,6 +25,15 @@ export default function (state = initialState, action) {
         loading: action.payload,
       };
     case AGREGAR_CERVEZA_EXITO:
+      let cervezaExistente = state.cervezasEnCarro.map((cervezaEnCarro) => {
+        if (cervezaEnCarro.id === action.payload.id) {
+          cervezaEnCarro = {
+            ...cervezaEnCarro,
+            quantity: cervezaEnCarro.quantity + 1,
+          };
+        }
+        return cervezaEnCarro;
+      });
       return {
         ...state,
         loading: false,

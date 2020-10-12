@@ -11,7 +11,14 @@ export default function About() {
           <h2>Carrito Simple (React - Redux)</h2>
         </Typography>
         <Typography variant="overline">
-          Carrito usando React, Redux y Material-UI
+          Carrito usando React, Redux y Material-UI -{" "}
+          <a
+            href="https://github.com/MatiMartinez/simple-beer-cart"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Repo Github
+          </a>
         </Typography>
         <br />
         <Typography variant="overline">

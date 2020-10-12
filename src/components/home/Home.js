@@ -19,7 +19,8 @@ export default function Home() {
   }
 
   function onClickAgregar(cerveza) {
-    agregarCerveza(cerveza);
+    const { id, name, image_url, tagline, ibu, abv } = cerveza;
+    agregarCerveza({ id, name, image_url, tagline, ibu, abv });
   }
 
   useEffect(() => {
@@ -36,8 +37,8 @@ export default function Home() {
   return (
     <Container className="container">
       <Box className="box-title">
-        <h2>NUESTROS CERVEZAS</h2>
-        <h4>Beers</h4>
+        <h2>NUESTROS PRODUCTOS</h2>
+        <h4>Cervezas</h4>
       </Box>
       <Grid container spacing={4}>
         {cargando === true ? (

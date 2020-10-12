@@ -73,7 +73,6 @@ export function getCervezasAction() {
       const res = await Axios.get(
         "https://api.punkapi.com/v2/beers?per_page=20"
       );
-      console.log(res);
       dispatch(getCervezasExito(res.data));
     } catch (error) {
       console.log(error);
